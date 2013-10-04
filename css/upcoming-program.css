@@ -71,6 +71,10 @@ span[data-icon] {
   }
 }
 
+.ya-orange-btn span[data-icon] {
+  font-size: 1em;
+}
+
 h1 {
   font: 36px "ProximaNova-Regular";
 }
@@ -624,7 +628,7 @@ body {
   background: -webkit-gradient(linear, left bottom, left top, color-stop(0.26, #9b9cbb), color-stop(0.5, #686a9b), color-stop(0.82, #394685));
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#394685', endColorstr='#9b9cbb',GradientType=0 );
   /* IE6-9 */
-  padding: 15px 0 15px 0;
+  padding: 15px 0  15px 0;
   display: none;
 }
 .ya-school-public-profile .ya-logo-box-tablet img {
@@ -664,12 +668,14 @@ a:hover, a:focus {
   .ya-school-public-profile .ya-left-column .ya-white-panel {
     margin: 375px 0 0 -40px;
     width: 291px;
+    padding-left: 30px;
   }
 }
 @media (min-width: 980px) and (max-width: 1199px) {
   .ya-school-public-profile .ya-left-column .ya-white-panel {
     margin: 375px 0 0 -40px;
     width: 291px;
+    padding-left: 30px;
   }
   .ya-school-public-profile .ya-middle-column {
     width: 65%;
@@ -706,6 +712,7 @@ a:hover, a:focus {
   .ya-school-public-profile .ya-left-column .ya-white-panel {
     margin: 375px 0 0 -40px;
     width: 291px;
+    padding-left: 30px;
   }
   .ya-school-public-profile .ya-middle-column {
     width: 58%;

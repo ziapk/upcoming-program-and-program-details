@@ -91,6 +91,12 @@ $icon_font_size: 20px;
 		@media(max-width:767px){text-align:center;.btn{@include input-medium();} }
 	}
 	
+.ya-orange-btn{
+	span[data-icon]{
+		font-size:1em;
+	}
+}	
+	
 	
 $PageHeading: 36px $Normal;
 $PageHeading2: 28px $Normal;
@@ -116,7 +122,7 @@ $PageHeading4: 18px $Normal;
   }
   h4 {
     font: $PageHeading4;
-    @media (max-width: 460px) {
+    @media (max-width: 460px){
       font-size: 16px;
     }
   }
@@ -144,6 +150,14 @@ $PageHeading4: 18px $Normal;
 .ya-link,.ya-link:hover{color:$blue2; cursor: pointer;}
 
 body{padding:0;}
+
+#ie7 .ya-school-public-profile{
+	.ya-left-column{
+		margin-left:-40px;
+		min-width:250px;
+		padding-left:30px;
+	}
+}
 
 .ya-school-public-profile
 {
@@ -183,6 +197,7 @@ body{padding:0;}
 	}
 	.ya-left-column{
 	min-width:250px;
+	
 	min-height: 429px;
 
 	.ya-logo-watermark{
@@ -589,6 +604,7 @@ $margin: 16px;
 		.ya-left-column{
 			.ya-white-panel{
 				margin: 375px 0 0 -40px; width: 291px;
+				padding-left:30px;
 			}
 		}
 		.ya-middle-column{
@@ -604,6 +620,7 @@ $margin: 16px;
 		.ya-left-column{
 			.ya-white-panel{
 				margin: 375px 0 0 -40px; width: 291px;
+				padding-left:30px;
 			}
 		}
 		.ya-middle-column{
@@ -636,6 +653,7 @@ $margin: 16px;
 		.ya-left-column{
 			.ya-white-panel{
 				margin: 375px 0 0 -40px; width: 291px;
+				padding-left:30px;
 			}
 		}
 		.ya-middle-column{

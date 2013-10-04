@@ -82,7 +82,11 @@ $icon_font_size: 20px;
 		@media(max-width:767px){text-align:center;.btn{@include input-medium();} }
 	}
 	
-	
+.ya-orange-btn{
+	span[data-icon]{
+		font-size:1em;
+	}
+}	
 $PageHeading: 36px $Normal;
 $PageHeading2: 28px $Normal;
 $PageHeading3: 20px $Normal;
@@ -495,7 +499,8 @@ padding:15px 0  15px 0;
 	}	
 
 
-}/* end school profile*/
+}
+/* end school profile*/
 
 
 a{color:$maroon;}
@@ -523,6 +528,7 @@ $margin: 16px;
 		.ya-left-column{
 			.ya-white-panel{
 				margin: 375px 0 0 -40px; width: 291px;
+				padding-left:30px;
 			}
 		}
 		.ya-middle-column{
@@ -538,6 +544,7 @@ $margin: 16px;
 		.ya-left-column{
 			.ya-white-panel{
 				margin: 375px 0 0 -40px; width: 291px;
+				padding-left:30px;
 			}
 		}
 		.ya-middle-column{
@@ -570,6 +577,7 @@ $margin: 16px;
 		.ya-left-column{
 			.ya-white-panel{
 				margin: 375px 0 0 -40px; width: 291px;
+				padding-left:30px;
 			}
 		}
 		.ya-middle-column{
