@@ -1,0 +1,671 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> 
+
+@import "compass/reset";*/
+
+*, *:before, *:after {
+-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+input {
+    box-sizing: content-box;
+}
+
+@import "bootstrap/mixins";
+@import "compass/css3";
+
+
+$maroon: #96171a;
+$blue:#3b237b;
+$blue2:#1e398d;
+$grey:#5f6a72;
+$white:#ffffff;
+$black:#000000;
+$grey2:#b4b3af;
+
+$gridFluidColumnWidth: 6.38298%;
+$gridFluidGutterWidth: 2.12766%;
+
+@mixin makeFluidRow() {
+  width: 100%;
+  @include clearfix();
+}
+@mixin makeFluidColumn($columns: 1, $offset: 0, $marginRate: 1) {
+  float: left;
+  margin-left: (($gridFluidColumnWidth * $offset) + ($gridFluidGutterWidth * ($offset - 1)) + ($gridFluidGutterWidth * 2)) * $marginRate;
+  width: ($gridFluidColumnWidth * $columns) + ($gridFluidGutterWidth * ($columns - 1));
+  
+  &:first-child {
+        margin-left: 0;
+  }
+}
+
+
+/** Global Fonts **/
+$Normal: 'ProximaNova-Regular';
+$Semibold: 'ProximaNova-Semibold';
+$Bold: 'ProximaNova-Bold';
+$Italic: 'ProximaNova-RegularIt'; 
+
+$margin_padding: 15px;
+$icon_font_size: 20px;
+
+
+.ya-two-column-row{
+		 @include makeFluidRow();
+		.ya-column-1{@include makeFluidColumn(6);}
+		.ya-column-2{@include makeFluidColumn(6);}		
+}
+	@mixin input-medium(){
+	  width: 150px;
+	}
+	@mixin input-small(){
+	  width: 90px;
+	}
+	@mixin input-large(){
+	  width: 210px;
+	}
+	$icon_font_size: 20px;
+	span[data-icon] {
+	  font-size: $icon_font_size;
+	 
+	  @media (max-width: 767px) {
+		font-size: 18px;
+	  }
+	}
+	.ya-button-row{ 
+		text-align:center;
+		.btn{@include input-medium();}
+		@media(max-width:767px){text-align:center;.btn{@include input-medium();} }
+	}
+	
+	
+$PageHeading: 36px $Normal;
+$PageHeading2: 28px $Normal;
+$PageHeading3: 20px $Normal;
+$PageHeading4: 18px $Normal;
+  h1 {
+    font: $PageHeading;
+    @media (max-width: 460px) {
+      font-size: 25px;
+    }
+  }
+  h2 {
+    font: $PageHeading2;
+    @media (max-width: 460px) {
+      font-size: 21px;
+    }
+  }
+  h3 {
+    font: $PageHeading3;
+    @media (max-width: 460px) {
+      font-size: 18px;
+    }
+  }
+  h4 {
+    font: $PageHeading4;
+    @media (max-width: 460px) {
+      font-size: 16px;
+    }
+  }
+
+  .ya-main-content{
+	/*@media (max-width:480px){
+		padding:20px 15px;
+	}
+	@media (min-width: 768px) and (max-width: 979px){
+		padding:20px 15px;
+	}*/
+  }
+
+
+
+
+.ui-datepicker {
+  font-size: 12px;
+}
+.ui-datepicker-trigger {
+  display:inline-block;
+  margin: 0px 0 0 5px;
+  cursor: pointer;
+}
+.ya-link,.ya-link:hover{color:$blue2; cursor: pointer;}
+
+body{padding:0;}
+
+.ya-school-public-profile
+{
+	/*border-left:30px solid #f4f0eb;
+	border-right:30px solid #f4f0eb; */
+	padding: 10px;
+	.ya-info-alert {
+	    background-color: #ffffff;
+	    border: 1px solid #6A6EAB;
+	    color: #3E488A;
+	    margin-top: 15px;
+	    @include border-radius(6px);
+	    .icon{ font-size:16px; color: #3E488A;margin: 0 10px 0 0; float:left;}
+	}
+	.ya-stars{ .icon{color: #FECC0A;}	}
+	.ya-content{
+
+	background: #aeb0d2; /* Old browsers */
+	background: linear-gradient(bottom, rgb(255,255,255) 71%, rgb(99,103,166) 93%, rgb(37,61,139) 99%);
+	background: -o-linear-gradient(bottom, rgb(255,255,255) 71%, rgb(99,103,166) 93%, rgb(37,61,139) 99%);
+	background: -moz-linear-gradient(bottom, rgb(255,255,255) 71%, rgb(99,103,166) 93%, rgb(37,61,139) 99%);
+	background: -webkit-linear-gradient(bottom, rgb(255,255,255) 71%, rgb(99,103,166) 93%, rgb(37,61,139) 99%);
+	background: -ms-linear-gradient(bottom, rgb(255,255,255) 71%, rgb(99,103,166) 93%, rgb(37,61,139) 99%);
+
+	background: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.71, rgb(255,255,255)),
+		color-stop(0.93, rgb(99,103,166)),
+		color-stop(0.99, rgb(37,61,139))
+	);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6367A6', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	/*background:url('../images/bg-blue-gradient.png') repeat-x;*/
+	
+	@include border-radius(15px 15px 0 0);
+
+	}
+	.ya-left-column{
+	min-width:250px;
+	min-height: 429px;
+
+	.ya-logo-watermark{
+	background:url('../images/bg-logo.png') no-repeat; 
+	position:absolute; 
+	width:466px; 
+	height:429px;
+	margin: 0 0 0 -30px;
+	z-index: 50;
+		.ya-school-logo{
+			margin:0;
+			border: 18px solid #96171A;
+		    margin: 59px 0 0 59px;
+		    width: 230px;
+		    overflow: hidden;
+		    @include border-radius(100%);
+			/*@media(max-width:767px){  width: 200px;  margin: 72px 0 0 75px;}*/
+		}
+		@media(max-width:510px){ background:url("../images/ya-purple-flower.png") no-repeat scroll 0 0 / 100% auto transparent;  position:relative; padding:40px;
+			 height: auto;
+		    left: 0;
+		    margin: auto;
+		    max-width: 270px;
+		    top: 0;
+		    width: auto;
+		    .ya-school-logo{margin:0; width:auto;}
+
+		}
+	}
+	.ya-white-panel{
+		position:relative;
+		background:$white; @include border-radius(0px 20px 20px 0);margin: 375px 0 0;@include box-shadow(3px 1px 3px rgba(199, 199, 224, 0.8));
+		
+		.ya-box{
+		   padding:18px 15px;
+		.ya-title{
+			color:$blue; font:{
+			family:ProximaNova-Semibold;
+			size:20px;weight:normal;		
+			}
+			 padding: 0 0 5px;
+			line-height: normal;
+			border-bottom: 1px solid $grey2;
+		}
+		.ya-description{color:$grey;	p{margin:0;	}
+		
+		}	
+		
+	}
+	.ya-yoga-taught,.ya-languages{
+		ul{
+			color:$grey; margin:0;
+			li{
+				list-style-type:none; font-family:ProximaNova-SemiBold;
+			}
+		}
+	}	
+	.ya-trainings-formats {
+		p{ margin:10px 0 !important;	}	
+		em{
+			font-family:ProximaNova-RegularIt; font-weight:normal; display:block;
+		}
+
+	}
+
+	.ya-school-rating{
+		.ya-rating-heading{}
+		.ya-rating-numer{color:$blue2;font-family:ProximaNova-Bold;font-size:22px; margin:0 0 10px;	
+			.ya-stars{display:inline-block; margin: -2px 0 0 8px; float:left}	}
+		.ya-rating-link{font-size:10px;}
+	}
+	.ya-contact-with-us{
+		.ya-social-icons{
+
+		.fs1 {
+			font-size: 1.7em;color: #909090; display: inline;
+			}
+		}
+		}
+	.ya-other-locations{
+	.ya-address{ margin:0 0 10px 0 !important;}
+	}	
+	
+
+	}	
+
+	}
+	.ya-middle-column{position:relative; z-index:100; padding: 40px 0 0;font:{
+	    family: ProximaNova-Regular;
+	    weight: normal;	    
+  		}
+
+		.ya-column-center{
+			p{@extend .ya-page-title}
+			padding:0 0;
+
+			.ya-column-center-box{
+			padding:0 15px;
+			}
+			.ya-about-container{	
+				margin:0 0 60px 0; 
+				.ya-about{					
+				}
+				.ya-about-active{
+					background:#344593;/* Old browsers */
+					background-image: linear-gradient(bottom, rgb(133,133,186) 17%, rgb(88,98,165) 59%, rgb(52,69,147) 80%);
+					background-image: -o-linear-gradient(bottom, rgb(133,133,186) 17%, rgb(88,98,165) 59%, rgb(52,69,147) 80%);
+					background-image: -moz-linear-gradient(bottom, rgb(133,133,186) 17%, rgb(88,98,165) 59%, rgb(52,69,147) 80%);
+					background-image: -webkit-linear-gradient(bottom, rgb(133,133,186) 17%, rgb(88,98,165) 59%, rgb(52,69,147) 80%);
+					background-image: -ms-linear-gradient(bottom, rgb(133,133,186) 17%, rgb(88,98,165) 59%, rgb(52,69,147) 80%);
+
+					background-image: -webkit-gradient(
+						linear,
+						left bottom,
+						left top,
+						color-stop(0.17, rgb(133,133,186)),
+						color-stop(0.59, rgb(88,98,165)),
+						color-stop(0.8, rgb(52,69,147))
+					);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#344593', Colorstr='#8585ba',GradientType=0 ); /* IE6-9 */
+
+					border:1px solid #253b8e; @include border-radius(7px);margin: 0 0 15px;
+				}
+			}
+			.ya-about-container-active{   margin: 0 0 50px;}
+
+			/*********upcoming program classes ***/
+			.ya-upcoming-programs-wrapper{
+				
+				.ya-programs-row{
+					.ya-programs-left-column{
+						@media (min-width: 768px) and (max-width: 979px){
+							@include makeFluidColumn(12,0,0);		
+						}
+					}
+					.ya-programs-right-column{
+						@media (min-width: 768px) and (max-width: 979px){
+							@include makeFluidColumn(12,0,0);
+						}
+					}
+					.ya-datepicker{float:left;
+						@media (max-width: 767px){
+							@include makeFluidColumn(9,0,0); 
+							
+						}
+					}
+					.ui-datepicker-trigger{
+						margin:4px 0 0 5px;
+						@media (max-width: 767px){
+							margin:4px 0 0 5px;
+						}
+					}
+				}
+				
+				
+			}
+			.ya-programs-found-wrapper{					
+				.ya-program-found-block{					
+					.ya-main-row{
+						@include makeFluidRow();  padding-bottom: 10px;    margin: $margin_padding 0;
+						.ya-column-1{
+							@include makeFluidColumn(2.6);	
+							@media (max-width: 480px){
+								@include makeFluidColumn(4); 
+							}						
+						}
+						.ya-column-2{
+							@include makeFluidColumn(9.4);padding:15px 0;
+							@media (max-width: 480px){
+								@include makeFluidColumn(8); 
+							}
+							.ya-row{
+								@media (max-width: 979px){
+								margin:0 0 10px 0;@include makeFluidRow(); 
+								}
+							}
+							.ya-program-name{@include makeFluidColumn(5);
+								@media (max-width: 979px){
+									@include makeFluidColumn(12,0,0);
+								}
+							}
+							.ya-program-code{@include makeFluidColumn(3);
+								@media (max-width: 979px){
+									@include makeFluidColumn(12,0,0);
+								}
+							}
+							.ya-program-date{@include makeFluidColumn(4);
+								@media (max-width: 979px){
+									@include makeFluidColumn(12,0,0);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			/********************/
+		}
+
+		a{font-family:ProximaNova-Semibold;
+		i{ font-size: 25px;
+		    line-height: normal;
+		    margin: -5px 5px 0 0;}}
+		
+
+	}
+	.ya-right-column{
+		.ya-right-box{padding: 0 15px;}
+ 		padding: 21px 0px 0;
+ 		.ya-logo-box-container{
+ 			border-left: 1px solid $grey2;  
+			.ya-logo-box{
+				background:#39468; /* Old browsers */
+				background: linear-gradient(bottom, rgb(155,156,187) 26%, rgb(104,106,155) 50%, rgb(57,70,133) 82%);
+				background: -o-linear-gradient(bottom, rgb(155,156,187) 26%, rgb(104,106,155) 50%, rgb(57,70,133) 82%);
+				background: -moz-linear-gradient(bottom, rgb(155,156,187) 26%, rgb(104,106,155) 50%, rgb(57,70,133) 82%);
+				background: -webkit-linear-gradient(bottom, rgb(155,156,187) 26%, rgb(104,106,155) 50%, rgb(57,70,133) 82%);
+				background: -ms-linear-gradient(bottom, rgb(155,156,187) 26%, rgb(104,106,155) 50%, rgb(57,70,133) 82%);
+
+				background: -webkit-gradient(
+					linear,
+					left bottom,
+					left top,
+					color-stop(0.26, rgb(155,156,187)),
+					color-stop(0.5, rgb(104,106,155)),
+					color-stop(0.82, rgb(57,70,133))
+				);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#394685', endColorstr='#9b9cbb',GradientType=0 ); /* IE6-9 */
+
+
+				padding: 5px;	
+				
+				text-align:center;
+				width:100%;
+				img{padding:4px;height: 92px;}
+				img:first-child{ margin: 0px 20px 0;}
+				span{color:#ffffff; font-family:ProximaNova-Semibold;margin: 10px 0 0; display:block }
+			}
+		}
+		.ya-school-reviews{
+			 margin: 26px 0;
+			p{color:$grey;}
+			
+			.ya-person-reviewed-container{
+				.ya-person-reviewed-box{margin:20px 0 0 0;}
+				.ya-stars{ .icon{font-size:18px;} }
+				.ya-name{margin:0;}
+			}
+
+		}
+
+		.ya-teaching-staff{
+			.ya-teaching-person-container{
+				.ya-person-box{
+					width:100%; float:left;  margin: 0 0 15px;
+					.ya-person-image{
+						/*float:left;*/
+						@include makeFluidColumn(5);
+						max-width: 105px;
+					}
+					.ya-person-description{
+						/*float:left;*/
+						padding: 25px 0 0 0px;
+						p{margin:0;color:$grey;}
+						@include makeFluidColumn(7);
+					}
+				}
+			}
+		}
+	}
+	.ya-page-title{ 
+		color:$white; 
+  	}
+  	.ya-page-title-medium{color:$grey; font:{
+	    family: ProximaNova-SemiBold;
+	    weight: normal;size:20px;	    
+  		}
+  		 border-bottom: 1px solid $grey2;    
+	    line-height: normal;
+	    padding: 0 0 5px;
+  	}	
+  	.ya-orange-btn{background:#ff9814;font:{family:ProximaNova-Regular;size:14px;}color:$white; @include text-shadow(0 0 0);border: 0 none; @include box-shadow(0 1px 2px rgba(119, 119, 224, 0.5)); margin: 8px 0 10px;
+  		.fs1{ float:left;padding: 0 10px 0 0;}
+  	}
+  	.ya-grey-btn{
+  		//@extend .ya-orange-btn;
+  		//background:#f3efeb;
+  		//@include box-shadow(0 0 0);
+  		//color:$grey;
+  		//@include border-radius(7px);
+  	}
+  	.ya-bold{font-weight:bold;}
+  	.ya-italic{font-style:italic;}
+  	
+  	.ya-logo-box-tablet{ 
+	
+	background:#39468; /* Old browsers */
+				background: linear-gradient(bottom, rgb(155,156,187) 26%, rgb(104,106,155) 50%, rgb(57,70,133) 82%);
+				background: -o-linear-gradient(bottom, rgb(155,156,187) 26%, rgb(104,106,155) 50%, rgb(57,70,133) 82%);
+				background: -moz-linear-gradient(bottom, rgb(155,156,187) 26%, rgb(104,106,155) 50%, rgb(57,70,133) 82%);
+				background: -webkit-linear-gradient(bottom, rgb(155,156,187) 26%, rgb(104,106,155) 50%, rgb(57,70,133) 82%);
+				background: -ms-linear-gradient(bottom, rgb(155,156,187) 26%, rgb(104,106,155) 50%, rgb(57,70,133) 82%);
+
+				background: -webkit-gradient(
+					linear,
+					left bottom,
+					left top,
+					color-stop(0.26, rgb(155,156,187)),
+					color-stop(0.5, rgb(104,106,155)),
+					color-stop(0.82, rgb(57,70,133))
+				);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#394685', endColorstr='#9b9cbb',GradientType=0 ); /* IE6-9 */
+padding:15px 0  15px 0;
+	
+	 			display:none;
+  		img{display:block; margin:0 0 10px 0; }
+  		span{display:block; font-family:ProximaNova-Semibold; color:#ffffff;}
+	}	
+
+
+}/* end school profile*/
+
+
+a{color:$maroon;}
+a:hover,a:focus{color:$maroon;}
+$blue: #3bbfdd;
+$margin: 16px;
+
+.content-navigation {
+  border-color: $blue;
+  color:
+    darken($blue, 9%);
+}
+
+.border {
+  padding: $margin / 2;
+  margin: $margin / 2;
+  border-color: $blue;
+}
+
+/*******media queries******/
+/* Large desktop */
+@media (min-width: 1200px) {
+	/*body{background:red;}*/
+	.ya-school-public-profile{
+		.ya-left-column{
+			.ya-white-panel{
+				margin: 375px 0 0 -40px; width: 291px;
+			}
+		}
+		.ya-middle-column{
+			.ya-column-center{
+			}
+		}
+	}	
+}
+ 
+@media (min-width: 980px) and (max-width: 1199px) { 
+	body{}
+	.ya-school-public-profile{
+		.ya-left-column{
+			.ya-white-panel{
+				margin: 375px 0 0 -40px; width: 291px;
+			}
+		}
+		.ya-middle-column{
+			width:65%;
+			.ya-column-center{width:100%;}
+			.ya-right-column{width:100%;}
+		}
+		.ya-right-column {
+			padding:0;
+			.ya-right-box{padding:0 15px 0 0;}
+			.ya-logo-box-container {
+				display:none;
+			}
+			.ya-school-reviews{margin-top:0;}
+		}
+		.ya-logo-box-tablet{
+			display:block;text-align: center;
+				
+			img{
+			    display: inline-block;
+			}
+		}
+	}
+
+} 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+	/*body{background:green;}*/
+	.ya-school-public-profile{
+		.ya-left-column{
+			.ya-white-panel{
+				margin: 375px 0 0 -40px; width: 291px;
+			}
+		}
+		.ya-middle-column{
+			width:58%;
+			.ya-column-center{width:100%;
+				.ya-about-container{margin:0 0 30px;}					
+			}
+			.ya-right-column{width:100%; }			 
+		}
+		.ya-right-column {
+			padding:0;
+			.ya-right-box{padding:0 15px 0 0;}
+			.ya-logo-box-container {
+				display:none;
+			}
+			.ya-school-reviews{margin-top:0;}
+		}
+		.ya-logo-box-tablet{
+			display:block;text-align: center;
+				
+			img{
+			    display: inline-block;
+			}
+		}
+	}
+
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+	/*body{background:blue;}*/
+	.ya-school-public-profile {
+		.ya-left-column {
+			.ya-white-panel{
+				display:none;
+			}
+			min-height:300px;
+		}
+		.ya-middle-column{
+			
+			.ya-column-center{
+				.ya-about-container{margin:0 0 30px;}					
+			}
+			.ya-right-column{ }
+			padding:0;			 
+		}
+		.ya-right-column {
+			padding:0;
+			.ya-right-box{}
+			.ya-logo-box-container {
+				display:none;
+			}
+			.ya-school-reviews{}
+		}
+		.ya-logo-box-tablet{display:block;text-align: center;
+			img{
+				 display: inline-block;
+			}
+		}
+	}
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+	/*body{background:teal;}*/
+
+}
+
+#ie7 .ya-upcoming-programs
+{
+	.ya-left-column{
+		.ya-logo-watermark{ 
+		.ya-school-logo{ 
+			width:200px;
+			margin-left:50px;
+		}
+
+		}
+		.ya-social-icons{
+			.fs1{margin:0 5px 0 0;}
+		}
+		
+	}
+	select{
+	*min-height:20px !important;
+    *height: 20px !important;
+	}
+	
+}
+
+input.span9{
+    *width:60% !important;
+    *min-height:20px !important;
+    *height: 20px !important;
+}
+.btn{
+    *margin-left: 10px;
+} 
